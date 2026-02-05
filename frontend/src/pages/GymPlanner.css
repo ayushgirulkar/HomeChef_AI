@@ -1,0 +1,244 @@
+/* =====================
+   GYM MEAL PLANNER
+===================== */
+
+/* =====================
+   CONTROLS GRID
+===================== */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* =====================
+   INPUTS & SELECTS
+===================== */
+.controls input,
+.controls select {
+  width: 100%;
+  height: 56px;                 /* 🔥 SAME HEIGHT */
+  padding: 0 18px;              /* vertical center via height */
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 18px;
+  border: 1.5px solid #f0e1cf;
+  background: #fffdf9;
+  color: #2c3e50;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+/* PLACEHOLDER */
+.controls input::placeholder {
+  color: #9ca3af;
+}
+
+/* FOCUS STATE */
+.controls input:focus,
+.controls select:focus {
+  border-color: #e88f1a;
+  box-shadow: 0 0 0 3px rgba(232,143,26,0.15);
+}
+
+/* =====================
+   FIX NUMBER INPUT (WEIGHT)
+===================== */
+.controls input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+/* Remove arrows (Chrome / Edge / Safari) */
+.controls input[type="number"]::-webkit-inner-spin-button,
+.controls input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* =====================
+   GENERATE BUTTON
+===================== */
+.controls button {
+  grid-column: 1 / -1;
+  height: 60px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #e88f1a, #d77f10);
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 14px 34px rgba(232,143,26,0.45);
+}
+
+.controls button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(232,143,26,0.55);
+}
+
+.controls button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =====================
+   MEAL WEEK
+===================== */
+.meal-week {
+  margin-top: 20px;
+}
+
+/* =====================
+   DAY CARD
+===================== */
+.day-card {
+  background: linear-gradient(180deg, #ffffff, #fff7ee);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.day-title {
+  margin-bottom: 16px;
+  color: #e88f1a;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* =====================
+   MEAL TABLE
+===================== */
+.meal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.meal-table th {
+  background: #fff3e0;
+  padding: 14px;
+  font-size: 14px;
+  text-align: left;
+  color: #2c3e50;
+}
+
+.meal-table td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+/* =====================
+   MEAL BADGES
+===================== */
+.meal-badge {
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  min-width: 95px;
+  font-size: 13px;
+}
+
+/* TIME COLORS */
+.meal-badge.breakfast {
+  background: #fbbc05;
+}
+
+.meal-badge.morning {
+  background: #ff7043;
+}
+
+.meal-badge.lunch {
+  background: #34a853;
+}
+
+.meal-badge.evening {
+  background: #8e24aa;
+}
+
+.meal-badge.dinner {
+  background: #1a73e8;
+}
+
+/* =====================
+   ACTION BUTTONS
+===================== */
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.actions button {
+  flex: 1;
+  height: 52px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* READ */
+.actions button:nth-child(1) {
+  background: #fff3e0;
+  color: #e88f1a;
+  border: 1.5px solid #e88f1a;
+}
+
+.actions button:nth-child(1):hover {
+  background: #e88f1a;
+  color: white;
+}
+
+/* SAVE */
+.actions button:nth-child(2) {
+  background: #2c3e50;
+  color: white;
+}
+
+.actions button:nth-child(2):hover {
+  background: #1f2a36;
+}
+
+/* PDF */
+.actions button:nth-child(3) {
+  background: linear-gradient(135deg, #e88f1a, #d77f10);
+  color: white;
+}
+
+.actions button:nth-child(3):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(232,143,26,0.45);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .meal-table th,
+  .meal-table td {
+    font-size: 13px;
+  }
+}

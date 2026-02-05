@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== PAGE CONTAINER ===== */
+.signup-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 🔥 WALLPAPER BACKGROUND */
+  background-image: url("/back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+}
+
+/* ===== SIGNUP CARD ===== */
+.signup-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eeeeee;
+  text-align: center;
+}
+
+/* ===== BRANDING HEADER (LOCKED HEIGHT) ===== */
+.brand-header {
+  min-height: 150px;              /* 🔒 prevents vertical stretch */
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SIGNUP LOGO (VISUAL SCALE ONLY) ===== */
+.signup-logo {
+  height: 80px;                   /* base size */
+  width: auto;
+
+  transform: scale(1.5);          /* 🔥 visual enlargement */
+  transform-origin: center;
+
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.25s ease;
+}
+
+.signup-logo:hover {
+  transform: scale(1.55);
+}
+
+/* ===== BRAND NAME ===== */
+.brand-name {
+  font-family: 'Rammetto One', sans-serif;
+  font-size: 32px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.brand-name span {
+  color: #e88f1a;
+}
+
+.signup-subtitle {
+  color: #5d6d7e;
+  font-size: 15px;
+  margin-top: 6px;
+}
+
+/* ===== INPUT GRID ===== */
+.signup-form-grid input,
+.signup-form-grid select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1.5px solid #eef2f3;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #fafbfc;
+  transition: all 0.3s ease;
+}
+
+.signup-form-grid input:focus,
+.signup-form-grid select:focus {
+  border-color: #e88f1a;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(232, 143, 26, 0.12);
+}
+
+/* ===== INPUT ROW (NAME + MOBILE) ===== */
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== SELECT BOX ===== */
+.select-box {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.select-box label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-left: 5px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* ===== SIGNUP BUTTON ===== */
+.signup-btn {
+  width: 100%;
+  padding: 16px;
+  background: #e88f1a;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.signup-btn:hover {
+  background: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 62, 80, 0.2);
+}
+
+/* ===== FOOTER ===== */
+.signup-footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.signup-footer span {
+  color: #e88f1a;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 30px 20px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .brand-header {
+    min-height: 140px;
+  }
+
+  .signup-logo {
+    transform: scale(1.4);
+  }
+}
